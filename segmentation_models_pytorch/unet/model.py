@@ -51,6 +51,7 @@ class Unet(SegmentationModel):
         decoder_attention_type: Optional[str] = None,
         in_channels: int = 3,
         classes: int = 1,
+        dropout: Optional[float] = None,
         activation: Optional[Union[str, callable]] = None,
         aux_params: Optional[dict] = None,
     ):
@@ -77,6 +78,7 @@ class Unet(SegmentationModel):
             out_channels=classes,
             activation=activation,
             kernel_size=3,
+            dropout = dropout,
         )
 
         if aux_params is not None:
