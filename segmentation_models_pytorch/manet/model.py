@@ -58,6 +58,7 @@ class MAnet(SegmentationModel):
         decoder_pab_channels: int = 64,
         in_channels: int = 3,
         classes: int = 1,
+        dropout: Optional[float] = None,
         activation: Optional[Union[str, callable]] = None,
         aux_params: Optional[dict] = None
     ):
@@ -83,6 +84,7 @@ class MAnet(SegmentationModel):
             out_channels=classes,
             activation=activation,
             kernel_size=3,
+            dropout=dropout,
         )
 
         if aux_params is not None:
